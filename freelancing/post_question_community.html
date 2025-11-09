@@ -128,7 +128,7 @@
 </div>
 </div>
 <div class="flex justify-end gap-4">
-<button class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-surface-dark text-white text-base font-bold tracking-wide ring-1 ring-white/20 transition-transform hover:scale-105 hover:bg-white/10" type="button">
+<button onclick="saveAsDraft()" class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-surface-dark text-white text-base font-bold tracking-wide ring-1 ring-white/20 transition-transform hover:scale-105 hover:bg-white/10" type="button">
 <span class="truncate">Save as Draft</span>
 </button>
 <button class="flex min-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide transition-transform hover:scale-105 gap-2" type="submit">
@@ -187,5 +187,17 @@
 </div>
 </footer>
 </div>
-
+<div id="draftNotification" class="fixed top-4 right-4 bg-secondary text-white px-6 py-4 rounded-lg shadow-lg flex items-center gap-3 hidden">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="font-medium">Question saved as draft!</span>
+</div>
+<script>
+function saveAsDraft() {
+    const notification = document.getElementById('draftNotification');
+    notification.classList.remove('hidden');
+    setTimeout(() => {
+        notification.classList.add('hidden');
+    }, 3000);
+}
+</script>
 </body></html>

@@ -77,10 +77,16 @@
 <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight">Find Your Next Challenge</h1>
 <p class="mt-2 text-lg text-white/70">Browse through client issues and find where your skills can make an impact.</p>
 </div>
+<div class="flex gap-3">
+<a href="freelancer-dashboard.html" class="flex shrink-0 min-w-[120px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-white/10 text-white text-base font-bold tracking-wide ring-1 ring-white/20 transition-colors hover:bg-white/20">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="truncate">Dashboard</span>
+</a>
 <button onclick="checkAuthAndPostIssue()" class="flex shrink-0 min-w-[140px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide transition-transform hover:scale-105">
 <span class="material-symbols-outlined">add</span>
 <span class="truncate">Post an Issue</span>
 </button>
+</div>
 </div>
 <div class="flex flex-col lg:flex-row gap-6 mb-8">
 <aside class="w-full lg:w-64 xl:w-72 flex-shrink-0">
@@ -109,8 +115,8 @@
 </select>
 </div>
 <div>
-<label class="block text-sm font-medium text-white/80 mb-2" for="price-range">Price Range</label>
-<input class="w-full h-2 bg-background-dark rounded-lg appearance-none cursor-pointer accent-primary" id="price-range" max="5000" min="0" name="price-range" type="range"/>
+<label class="block text-sm font-medium text-white/80 mb-2" for="price-range">Price Range: <span id="priceValue" class="text-primary font-bold">$5000+</span></label>
+<input oninput="document.getElementById('priceValue').textContent = this.value >= 5000 ? '$5000+' : '$' + this.value" class="w-full h-2 bg-background-dark rounded-lg appearance-none cursor-pointer accent-primary" id="price-range" max="5000" min="0" name="price-range" type="range" value="5000"/>
 <div class="flex justify-between text-xs text-white/60 mt-1">
 <span>$0</span>
 <span>$5000+</span>
@@ -131,13 +137,14 @@
 <label class="text-sm text-white/80" for="expert">Expert</label>
 </div>
 </div>
+<button onclick="applyFilters()" class="w-full mt-4 rounded-lg bg-primary text-white py-2.5 px-4 text-sm font-bold hover:bg-primary/90 transition-colors">Apply Filters</button>
 </div>
 </div>
 </div>
 </aside>
 <div class="flex-1">
-<div class="space-y-4">
-<div class="rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10">
+<div id="jobsContainer" class="space-y-4">
+<div class="job-card rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10" data-category="Frontend Development" data-budget="1200">
 <div class="flex flex-col sm:flex-row justify-between gap-4">
 <div>
 <div class="flex items-center gap-3">
@@ -170,7 +177,7 @@
 </a>
 </div>
 </div>
-<div class="rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10">
+<div class="job-card rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10" data-category="DevOps & Cloud" data-budget="2500">
 <div class="flex flex-col sm:flex-row justify-between gap-4">
 <div>
 <div class="flex items-center gap-3">
@@ -203,7 +210,7 @@
 </a>
 </div>
 </div>
-<div class="rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10">
+<div class="job-card rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10" data-category="Backend Development" data-budget="3750">
 <div class="flex flex-col sm:flex-row justify-between gap-4">
 <div>
 <div class="flex items-center gap-3">
@@ -236,7 +243,7 @@
 </a>
 </div>
 </div>
-<div class="rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10">
+<div class="job-card rounded-xl border border-white/10 bg-surface-dark p-6 transition-all hover:border-primary/80 hover:shadow-2xl hover:shadow-primary/10" data-category="UI/UX Design" data-budget="1800">
 <div class="flex flex-col sm:flex-row justify-between gap-4">
 <div>
 <div class="flex items-center gap-3">
@@ -343,6 +350,30 @@ function checkAuthAndPostIssue() {
   } else {
     window.location.href = 'client_post_issue.html';
   }
+}
+
+function applyFilters() {
+  const category = document.getElementById('category').value;
+  const priceRange = parseFloat(document.getElementById('price-range').value);
+  const search = document.getElementById('search').value.toLowerCase();
+  const cards = document.querySelectorAll('.job-card');
+  
+  let visibleCount = 0;
+  cards.forEach(card => {
+    let show = true;
+    const cardCategory = card.dataset.category;
+    const cardBudget = parseFloat(card.dataset.budget);
+    const cardText = card.textContent.toLowerCase();
+    
+    if (category !== 'All Categories' && cardCategory !== category) show = false;
+    if (priceRange < 5000 && cardBudget > priceRange) show = false;
+    if (search && !cardText.includes(search)) show = false;
+    
+    card.style.display = show ? 'block' : 'none';
+    if (show) visibleCount++;
+  });
+  
+  console.log(`Filters applied: ${visibleCount} jobs visible`);
 }
 </script>
 </body></html>

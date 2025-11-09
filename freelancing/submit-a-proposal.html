@@ -124,10 +124,19 @@
 </div>
 </div>
 <div class="border-t border-white/10 pt-8">
+<div id="draftNotification" class="hidden mb-6 rounded-lg bg-secondary/10 border border-secondary/30 p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<p class="text-secondary font-medium">Saved in Drafts</p>
+</div>
 <div class="flex flex-col sm:flex-row-reverse sm:items-center sm:justify-between gap-6">
-<a href="proposal-confirmation-page.html" class="flex w-full sm:w-auto min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide transition-transform hover:scale-105">
+<div class="flex flex-col sm:flex-row gap-3">
+<button onclick="saveAsDraft()" type="button" class="flex w-full sm:w-auto min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white/10 text-white text-base font-bold tracking-wide ring-1 ring-white/20 transition-colors hover:bg-white/20">
+<span class="truncate">Save as Draft</span>
+</button>
+<a href="proposal-confirmation-page.html" class="flex w-full sm:w-auto min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide transition-transform hover:scale-105">
 <span class="truncate">Submit Proposal</span>
 </a>
+</div>
 <div class="text-sm text-white/60">
 <p>Submitting this proposal will use <span class="font-bold text-white">2 DevCoins</span>.</p>
 <p class="text-xs text-white/50">You have 18 DevCoins remaining.</p>
@@ -186,5 +195,13 @@
 </div>
 </footer>
 </div>
-
+<script>
+function saveAsDraft() {
+  const notification = document.getElementById('draftNotification');
+  notification.classList.remove('hidden');
+  setTimeout(() => {
+    notification.classList.add('hidden');
+  }, 3000);
+}
+</script>
 </body></html>

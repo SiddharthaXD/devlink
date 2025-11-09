@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillLink - Work History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff7a00",
+                        "secondary": "#00c4b3",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#1a1a1a",
+                        "text-light": "#ffffff",
+                        "text-dark": "#b3b3b3",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-body text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-10 flex items-center bg-background-dark/80 p-4 backdrop-blur-sm">
+<button onclick="history.back()" class="text-text-light flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-text-light text-xl font-bold font-display leading-tight flex-1 text-center pr-10">Work History</h1>
+</header>
+<main class="flex flex-col gap-4 p-4">
+<div class="flex items-center justify-between gap-3">
+<button onclick="document.getElementById('filterModal').classList.remove('hidden')" class="flex items-center justify-center gap-2 rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-text-light ring-1 ring-white/10 transition-colors hover:bg-zinc-700">
+<span class="material-symbols-outlined text-base">filter_list</span>
+<span>Filter</span>
+</button>
+<button onclick="document.getElementById('sortModal').classList.remove('hidden')" class="flex items-center justify-center gap-2 rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-text-light ring-1 ring-white/10 transition-colors hover:bg-zinc-700">
+<span class="material-symbols-outlined text-base">swap_vert</span>
+<span id="sortButtonText">Sort By: Most Recent</span>
+</button>
+</div>
+<div id="projectsContainer" class="flex flex-col gap-4">
+<div class="project-card flex flex-col rounded-xl bg-zinc-900/50 p-4 ring-1 ring-white/10" data-rating="4.8" data-client="Innovate Inc." data-date="2023-10" data-testimonial="false">
+<div class="flex w-full flex-col items-start gap-3">
+<h2 class="font-display text-lg font-bold leading-tight tracking-tight text-text-light">E-commerce Platform Redesign</h2>
+<p class="text-sm font-normal">Client: Innovate Inc. | Completed: Oct 2023</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star_half</span>
+<span class="ml-2 text-sm">4.8 / 5 Stars</span>
+</div>
+<p class="text-base font-normal leading-relaxed">
+                    A short summary of the project scope and the freelancer's role in redesigning the entire user experience for a major online retailer.
+                </p>
+<div class="flex w-full items-center gap-3 pt-2">
+<button onclick="window.location.href='view_details.html'" class="flex min-w-[84px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal transition-opacity hover:opacity-90">
+<span class="truncate">View Details</span>
+</button>
+<button onclick="window.location.href='request_testimonial.html'" class="flex min-w-[84px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent text-secondary text-sm font-bold leading-normal ring-1 ring-secondary transition-colors hover:bg-secondary/10">
+<span class="truncate">Request Testimonial</span>
+</button>
+</div>
+</div>
+</div>
+<div class="project-card flex flex-col rounded-xl bg-zinc-900/50 p-4 ring-1 ring-white/10" data-rating="5" data-client="QuantumLeap AI" data-date="2023-08" data-testimonial="true">
+<div class="flex w-full flex-col items-start gap-3">
+<h2 class="font-display text-lg font-bold leading-tight tracking-tight text-text-light">AI Chatbot Integration</h2>
+<p class="text-sm font-normal">Client: QuantumLeap AI | Completed: Aug 2023</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="ml-2 text-sm">5 / 5 Stars</span>
+</div>
+<p class="text-base font-normal leading-relaxed">
+                    Developed and integrated a custom AI-powered chatbot to improve customer support efficiency and response times.
+                </p>
+<div class="flex w-full items-center justify-between gap-3 rounded-lg bg-secondary/10 p-3 text-sm text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Testimonial Received</span>
+</div>
+<a class="font-bold underline" href="view_testimonials.html">View</a>
+</div>
+<div class="flex w-full items-center gap-3 pt-2">
+<button onclick="window.location.href='view_details.html'" class="flex min-w-[84px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal transition-opacity hover:opacity-90">
+<span class="truncate">View Details</span>
+</button>
+</div>
+</div>
+</div>
+<div class="project-card flex flex-col rounded-xl bg-zinc-900/50 p-4 ring-1 ring-white/10" data-rating="4" data-client="Nomad Ventures" data-date="2023-06" data-testimonial="false">
+<div class="flex w-full flex-col items-start gap-3">
+<h2 class="font-display text-lg font-bold leading-tight tracking-tight text-text-light">Mobile App UI Kit</h2>
+<p class="text-sm font-normal">Client: Nomad Ventures | Completed: Jun 2023</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+<span class="material-symbols-outlined text-zinc-600 text-base">star</span>
+<span class="ml-2 text-sm">4 / 5 Stars</span>
+</div>
+<p class="text-base font-normal leading-relaxed">
+                    Designed a comprehensive UI kit and design system for a new travel application, focusing on usability and modern aesthetics.
+                </p>
+<div class="flex w-full items-center gap-3 pt-2">
+<button onclick="window.location.href='view_details.html'" class="flex min-w-[84px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal transition-opacity hover:opacity-90">
+<span class="truncate">View Details</span>
+</button>
+<button onclick="window.location.href='request_testimonial.html'" class="flex min-w-[84px] flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent text-secondary text-sm font-bold leading-normal ring-1 ring-secondary transition-colors hover:bg-secondary/10">
+<span class="truncate">Request Testimonial</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+<!-- Filter Modal -->
+<div id="filterModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+<div class="w-full max-w-md rounded-xl bg-zinc-900 p-6 ring-1 ring-white/10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold text-text-light font-display">Filter Projects</h2>
+<button onclick="document.getElementById('filterModal').classList.add('hidden')" class="text-text-dark hover:text-text-light">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-4">
+<div>
+<label class="block text-sm font-medium text-text-light mb-2">Rating</label>
+<select id="filterRating" onchange="applyFilters()" class="w-full rounded-lg bg-zinc-800 px-4 py-2 text-text-light ring-1 ring-white/10 focus:ring-2 focus:ring-primary outline-none">
+<option value="">All Ratings</option>
+<option value="5">5 Stars</option>
+<option value="4">4+ Stars</option>
+<option value="3">3+ Stars</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light mb-2">Status</label>
+<select id="filterStatus" onchange="applyFilters()" class="w-full rounded-lg bg-zinc-800 px-4 py-2 text-text-light ring-1 ring-white/10 focus:ring-2 focus:ring-primary outline-none">
+<option value="">All Projects</option>
+<option value="completed">Completed</option>
+<option value="testimonial">With Testimonial</option>
+<option value="no-testimonial">Without Testimonial</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-light mb-2">Date Range</label>
+<select id="filterDate" onchange="applyFilters()" class="w-full rounded-lg bg-zinc-800 px-4 py-2 text-text-light ring-1 ring-white/10 focus:ring-2 focus:ring-primary outline-none">
+<option value="">All Time</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+</select>
+</div>
+<div class="flex gap-3 pt-2">
+<button type="button" onclick="document.getElementById('filterModal').classList.add('hidden')" class="flex-1 rounded-lg bg-zinc-800 px-4 py-2 text-sm font-bold text-text-light ring-1 ring-white/10 hover:bg-zinc-700">Close</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- Sort Modal -->
+<div id="sortModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+<div class="w-full max-w-md rounded-xl bg-zinc-900 p-6 ring-1 ring-white/10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold text-text-light font-display">Sort By</h2>
+<button onclick="document.getElementById('sortModal').classList.add('hidden')" class="text-text-dark hover:text-text-light">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-3">
+<label class="flex items-center gap-3 p-3 rounded-lg bg-zinc-800/50 cursor-pointer hover:bg-zinc-800 ring-1 ring-white/10">
+<input type="radio" name="sort" value="recent" checked onchange="applySort(this.value)" class="w-4 h-4 text-primary focus:ring-primary">
+<span class="text-text-light">Most Recent</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-zinc-800/50 cursor-pointer hover:bg-zinc-800 ring-1 ring-white/10">
+<input type="radio" name="sort" value="oldest" onchange="applySort(this.value)" class="w-4 h-4 text-primary focus:ring-primary">
+<span class="text-text-light">Oldest First</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-zinc-800/50 cursor-pointer hover:bg-zinc-800 ring-1 ring-white/10">
+<input type="radio" name="sort" value="rating-high" onchange="applySort(this.value)" class="w-4 h-4 text-primary focus:ring-primary">
+<span class="text-text-light">Highest Rating</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-zinc-800/50 cursor-pointer hover:bg-zinc-800 ring-1 ring-white/10">
+<input type="radio" name="sort" value="rating-low" onchange="applySort(this.value)" class="w-4 h-4 text-primary focus:ring-primary">
+<span class="text-text-light">Lowest Rating</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg bg-zinc-800/50 cursor-pointer hover:bg-zinc-800 ring-1 ring-white/10">
+<input type="radio" name="sort" value="client" onchange="applySort(this.value)" class="w-4 h-4 text-primary focus:ring-primary">
+<span class="text-text-light">Client Name (A-Z)</span>
+</label>
+<div class="flex gap-3 pt-2">
+<button type="button" onclick="document.getElementById('sortModal').classList.add('hidden')" class="flex-1 rounded-lg bg-zinc-800 px-4 py-2 text-sm font-bold text-text-light ring-1 ring-white/10 hover:bg-zinc-700">Close</button>
+</div>
+</form>
+</div>
+</div>
+
+<script>
+function applyFilters() {
+  const rating = document.getElementById('filterRating').value;
+  const status = document.getElementById('filterStatus').value;
+  const date = document.getElementById('filterDate').value;
+  const cards = document.querySelectorAll('.project-card');
+  
+  cards.forEach(card => {
+    let show = true;
+    if (rating && parseFloat(card.dataset.rating) < parseFloat(rating)) show = false;
+    if (status === 'testimonial' && card.dataset.testimonial !== 'true') show = false;
+    if (status === 'no-testimonial' && card.dataset.testimonial !== 'false') show = false;
+    if (date && !card.dataset.date.startsWith(date)) show = false;
+    card.style.display = show ? 'flex' : 'none';
+  });
+}
+
+function applySort(type) {
+  const container = document.getElementById('projectsContainer');
+  const cards = Array.from(document.querySelectorAll('.project-card'));
+  const labels = {recent: 'Most Recent', oldest: 'Oldest First', 'rating-high': 'Highest Rating', 'rating-low': 'Lowest Rating', client: 'Client Name (A-Z)'};
+  
+  cards.sort((a, b) => {
+    if (type === 'recent') return b.dataset.date.localeCompare(a.dataset.date);
+    if (type === 'oldest') return a.dataset.date.localeCompare(b.dataset.date);
+    if (type === 'rating-high') return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+    if (type === 'rating-low') return parseFloat(a.dataset.rating) - parseFloat(b.dataset.rating);
+    if (type === 'client') return a.dataset.client.localeCompare(b.dataset.client);
+  });
+  
+  cards.forEach(card => container.appendChild(card));
+  document.getElementById('sortButtonText').textContent = 'Sort By: ' + labels[type];
+  document.getElementById('sortModal').classList.add('hidden');
+}
+</script>
+</body></html>

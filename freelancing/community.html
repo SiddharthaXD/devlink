@@ -49,12 +49,17 @@
 <header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-lg">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex h-20 items-center justify-between border-b border-white/10">
+<div class="flex items-center gap-4">
+<button onclick="window.location.href='freelancer-dashboard.html'" class="text-white/80 hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
 <a href="index.html" class="flex items-center gap-4">
 <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
 </svg>
 <h2 class="font-display text-white text-xl font-bold">DevLink</h2>
 </a>
+</div>
 <div class="hidden md:flex items-center gap-8">
 <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="find-work.html">Find Work</a>
 <a class="text-white font-medium transition-colors border-b-2 border-primary pb-1" href="community.html">Community</a>
@@ -96,32 +101,17 @@
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 <div class="lg:col-span-2">
-<div class="bg-surface-dark border border-white/10 rounded-xl p-4 sm:p-6 mb-6">
-<div class="flex items-start gap-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDt0TIklJUL65zYNdHmkDRzFnxFEHwf4OnAYPipeB0B15fKj7OPxCXnS0A9pKl48GqGwPJbMDymbomte8wh0RojZx8CZYB4OhIOO6V19iVUJB0cL1Tm2JkgIPLrxAaenezyYQXwdsYSoNXDTqUTra5iTDTvirBIrlkN3MdVV2mFNPOMD24GPUf8yTO0QeP8-g3DXRR16cug4mdaBc-qvwTEG8V4pmbecyLcQezI_pmMak4Y8iVNzNdNW4I7cNMyS8f1DJfu61f0lJTR");'></div>
-<div class="w-full">
-<textarea class="w-full bg-transparent text-white/80 placeholder:text-white/50 text-base resize-none border-0 focus:ring-0 p-0" placeholder="Ask a question or share a thought..." rows="2"></textarea>
-<div class="flex justify-between items-center mt-3 pt-3 border-t border-white/10">
-<div class="flex items-center gap-2">
-<button class="text-white/60 hover:text-secondary transition-colors p-2 rounded-full"><span class="material-symbols-outlined">image</span></button>
-<button class="text-white/60 hover:text-secondary transition-colors p-2 rounded-full"><span class="material-symbols-outlined">videocam</span></button>
-<button class="text-white/60 hover:text-secondary transition-colors p-2 rounded-full"><span class="material-symbols-outlined">code</span></button>
-</div>
-<button onclick="checkAuthAndPost()" class="flex min-w-[90px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold tracking-wide transition-transform hover:scale-105">Post</button>
-</div>
-</div>
-</div>
-</div>
+
 <div class="flex justify-between items-center mb-6">
 <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white">Discussions</h2>
 <div class="flex items-center gap-2">
-<button class="h-10 px-4 rounded-lg bg-surface-dark ring-1 ring-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors">Newest</button>
-<button class="h-10 px-4 rounded-lg bg-transparent text-white/60 text-sm font-medium hover:bg-white/5 transition-colors">Trending</button>
-<button class="h-10 px-4 rounded-lg bg-transparent text-white/60 text-sm font-medium hover:bg-white/5 transition-colors">Unanswered</button>
+<button onclick="filterDiscussions('newest')" id="btnNewest" class="h-10 px-4 rounded-lg bg-surface-dark ring-1 ring-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors">Newest</button>
+<button onclick="filterDiscussions('trending')" id="btnTrending" class="h-10 px-4 rounded-lg bg-transparent text-white/60 text-sm font-medium hover:bg-white/5 transition-colors">Trending</button>
+<button onclick="filterDiscussions('unanswered')" id="btnUnanswered" class="h-10 px-4 rounded-lg bg-transparent text-white/60 text-sm font-medium hover:bg-white/5 transition-colors">Unanswered</button>
 </div>
 </div>
 <div class="flex flex-col gap-4">
-<div class="bg-surface-dark border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors duration-300">
+<div onclick="window.location.href='community_discussions_details.html'" class="bg-surface-dark border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors duration-300 cursor-pointer">
 <div class="flex items-start justify-between gap-4">
 <div class="flex flex-col gap-2">
 <a class="font-display text-lg font-bold text-white hover:text-primary transition-colors" href="community_discussions_details.html">How to optimize a complex SQL query with multiple joins?</a>
@@ -151,7 +141,7 @@
 </div>
 </div>
 </div>
-<div class="bg-surface-dark border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors duration-300">
+<div onclick="window.location.href='community_discussions_details.html'" class="bg-surface-dark border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors duration-300 cursor-pointer">
 <div class="flex items-start justify-between gap-4">
 <div class="flex flex-col gap-2">
 <a class="font-display text-lg font-bold text-white hover:text-primary transition-colors" href="community_discussions_details.html">Best practices for state management in a large-scale React application?</a>
@@ -181,7 +171,7 @@
 </div>
 </div>
 </div>
-<div class="bg-surface-dark border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors duration-300">
+<div onclick="window.location.href='community_discussions_details.html'" class="bg-surface-dark border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors duration-300 cursor-pointer">
 <div class="flex items-start justify-between gap-4">
 <div class="flex flex-col gap-2">
 <a class="font-display text-lg font-bold text-white hover:text-primary transition-colors" href="community_discussions_details.html">Async/Await vs Promises in Node.js for handling I/O operations</a>
@@ -230,7 +220,7 @@
 <p class="text-sm text-white/60">12k members</p>
 </div>
 </div>
-<button class="h-8 px-3 rounded-md bg-white/10 text-white text-xs font-bold tracking-wide hover:bg-white/20 transition-colors">JOIN</button>
+<button onclick="joinGroup(this)" class="h-8 px-3 rounded-md bg-white/10 text-white text-xs font-bold tracking-wide hover:bg-white/20 transition-colors">JOIN</button>
 </li>
 <li class="flex items-center justify-between">
 <div class="flex items-center gap-3">
@@ -242,7 +232,7 @@
 <p class="text-sm text-white/60">8.5k members</p>
 </div>
 </div>
-<button class="h-8 px-3 rounded-md bg-white/10 text-white text-xs font-bold tracking-wide hover:bg-white/20 transition-colors">JOIN</button>
+<button onclick="joinGroup(this)" class="h-8 px-3 rounded-md bg-white/10 text-white text-xs font-bold tracking-wide hover:bg-white/20 transition-colors">JOIN</button>
 </li>
 <li class="flex items-center justify-between">
 <div class="flex items-center gap-3">
@@ -352,6 +342,19 @@ function checkAuthAndPost() {
   } else {
     window.location.href = 'post_question_community.html';
   }
+}
+function joinGroup(btn) {
+  alert('Successfully joined the group!');
+  btn.textContent = 'JOINED';
+  btn.className = 'h-8 px-3 rounded-md bg-primary text-white text-xs font-bold tracking-wide transition-transform hover:scale-105';
+  btn.onclick = null;
+}
+function filterDiscussions(filter) {
+  document.querySelectorAll('[id^="btn"]').forEach(btn => {
+    btn.className = 'h-10 px-4 rounded-lg bg-transparent text-white/60 text-sm font-medium hover:bg-white/5 transition-colors';
+  });
+  const activeBtn = document.getElementById('btn' + filter.charAt(0).toUpperCase() + filter.slice(1));
+  activeBtn.className = 'h-10 px-4 rounded-lg bg-surface-dark ring-1 ring-white/10 text-white text-sm font-medium hover:bg-white/10 transition-colors';
 }
 </script>
 </body></html>

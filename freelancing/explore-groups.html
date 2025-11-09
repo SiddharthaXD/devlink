@@ -73,25 +73,25 @@
 <div class="text-white/60 flex border-none bg-white/5 items-center justify-center pl-4 rounded-l-lg border-r-0">
 <span class="material-symbols-outlined text-2xl">search</span>
 </div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white/5 h-full placeholder:text-white/60 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search for groups by name or topic..." value=""/>
+<input id="searchInput" oninput="searchGroups()" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-white/5 focus:bg-white/5 h-full placeholder:text-white/60 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search for groups by name or topic..." value=""/>
 </div>
 </label>
 </div>
 <div class="flex gap-3 items-center overflow-x-auto pb-2">
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors px-4">
+<button onclick="changeCategory(this)" class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors px-4">
 <span class="material-symbols-outlined text-[#00C4CC] text-xl">category</span>
-<p class="text-white text-sm font-medium leading-normal">Category: All</p>
+<p id="categoryText" class="text-white text-sm font-medium leading-normal">Category: All</p>
 <span class="material-symbols-outlined text-white/70 text-xl">expand_more</span>
 </button>
-<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors px-4">
+<button onclick="changeSortBy(this)" class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors px-4">
 <span class="material-symbols-outlined text-[#00C4CC] text-xl">sort</span>
-<p class="text-white text-sm font-medium leading-normal">Sort By: Popularity</p>
+<p id="sortByText" class="text-white text-sm font-medium leading-normal">Sort By: Popularity</p>
 <span class="material-symbols-outlined text-white/70 text-xl">expand_more</span>
 </button>
 </div>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div id="groupsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="React.js Enthusiasts" data-desc="All things React, from hooks to state management." data-category="Frontend" data-members="3500">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract gradient for React.js group" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHMR3sP4nvpJg7Ud2faR5SJzlsMy4eVFBRIUkj6Dp9nGqgDKKp4xrqIFVdyiDwYjLquDqdCsMLddrA9Mu76rcFMIDblv_KHppWigvihzxr7or0guHfO1KAoSdHtpwoCuW1iULFIF70hg1OEotrWtY1vBJiinYaZKuA0RlP4yQBxBnSKTlp5fdXWJq4DCoP9ERDXxHQc12d0KG8dCGw6eNssf6s-dSy2Xx5i05G4nypmSUUhw6n9IhKxMWN7Ce5O7WrkjhAziVMpV-M");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">React.js Enthusiasts</p>
@@ -101,10 +101,10 @@
 <p class="text-[#00C4CC] text-sm font-normal leading-normal flex items-center gap-2">
 <span class="material-symbols-outlined text-lg">group</span> 3.5k members
 </p>
-<button onclick="checkAuthAndJoin()" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
+<button onclick="checkAuthAndJoin(this)" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
 </div>
 </div>
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="UI/UX Designers Hub" data-desc="Share your designs and get feedback from peers." data-category="Frontend" data-members="2100">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract UI design elements for UI/UX group" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcbpQnEKXd3VU_OVDYO8kxsScGwEyaFsgDIRs3U9UEXXNChTla8RxfjDX049pjxBWDPg1YQ3r1Gt1HIVCL4SvkkqzmWXbrSTvhgay7hG-15gpeE8kw-oA-tUwegrxDV4Ec0ngNJZ1bGPtThxraLLQA8YOuRGCv5nJbRFuvFEZFpj1I0FR5jQGYuWAtm22XtGMb6bFOEEoQhlJLlZoUVJAbxrUWk40V1o2nB8LgRrP-O1O5U92w-Yt-8xRLGX02tBvcrRYeOBHNUBLT");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">UI/UX Designers Hub</p>
@@ -117,7 +117,7 @@
 <button class="bg-primary/30 hover:bg-primary/40 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">View Group</button>
 </div>
 </div>
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="Python & Data Science" data-desc="From Pandas to TensorFlow, all levels welcome." data-category="Data Science" data-members="5200">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Python code on a screen for Data Science group" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlP7tUEpilVXs_ToJZ5u1h7ZxHz2MDs4Myzo3yLvUm9qHj7o3L9i2fycwgHfTj7zvh6LITbTl42i-CBmJ7nB4HABIVvPbxKcCkmgPPzdrVyT5X99vsfOCkpkuOo7r-_GImdIxIUtqOXmnBLWyTgL05B3oSV4HIAsMS1jS20r5SFPbLxQiVoBHmqgnD1pcubneqeMUNzZf1ttarmwHDAnlY0o60YRvUg5cQxl6577ormHGPyHe3Epq7xy-qiRyWzjQxZJ6MdUJaD6Vq");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">Python &amp; Data Science</p>
@@ -127,10 +127,10 @@
 <p class="text-[#00C4CC] text-sm font-normal leading-normal flex items-center gap-2">
 <span class="material-symbols-outlined text-lg">group</span> 5.2k members
 </p>
-<button onclick="checkAuthAndJoin()" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
+<button onclick="checkAuthAndJoin(this)" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
 </div>
 </div>
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="Advanced JavaScript" data-desc="Discussing ESNext, frameworks, and performance." data-category="Frontend" data-members="4800">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Lines of JavaScript code" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3Yw_e-qNOWFObFEIhbrVBRAb3nNzTtKph8PA1jF2AetxZaEfyWTi-sA8UbhomjhswPAUSn_1gEo3OdHByGo48kaA-aG5tqtwPgdu17EIv8lt_1b6mjoJniF1fDDPWSgAMV7sGQxTgu46-4Ix0RU4l70PCVXJo5RUjtxRnpRr3vqFHqeuTxRfQ7RsL7jmcRhLJUL7ZjXGSr75Q4Y8VHIcx7N6WDRDD7rzRAO6scZv6pO94_uxRQBnWDshrYNKuWQ817JKeH2U7ZcV4");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">Advanced JavaScript</p>
@@ -143,7 +143,7 @@
 <button class="bg-primary/30 hover:bg-primary/40 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">View Group</button>
 </div>
 </div>
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="Data Visualization Crew" data-desc="For enthusiasts of D3.js, Tableau, and more." data-category="Data Science" data-members="1900">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Colorful data visualization chart" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDl4xiXFEQtngRRWoGZ8RNipvlp9Z8TqWd8jm_TshbbMhrEnzAtJg6ktrKKBvVb771eim9BgIV2ZPZ_-pGjAAXPrsKHqa4Y_c9-dYuphL4Vdew8YRUE0uMvX0Lc42OWgIzOVOfsEpaDW70CQ0bWwDNNB_-vXu6efgPO4-kf6tqdtuw5VP2bRM9_OeQHXIvJvuZOJxx2zqXY54VW_Dqt8D1jmNCqwdJCXUNjvpAwV9-7s6FOQc5TGRH5QDtRuFow869YwyVKRIDN5Zls");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">Data Visualization Crew</p>
@@ -153,10 +153,10 @@
 <p class="text-[#00C4CC] text-sm font-normal leading-normal flex items-center gap-2">
 <span class="material-symbols-outlined text-lg">group</span> 1.9k members
 </p>
-<button onclick="checkAuthAndJoin()" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
+<button onclick="checkAuthAndJoin(this)" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
 </div>
 </div>
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="AI & Machine Learning" data-desc="The latest in AI, from theory to application." data-category="AI/ML" data-members="6000">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Artistic representation of neural networks" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAagwbnNCr_UBgaioiJshe5zQo4mFh1WUGd2_Xjm4STx4mB5-cPb5Tck95VH9IfUtnYXsgOGtw3geunHN54uUqriD8rxRLgn6lGNOGh4hFzxC-ZpAPAM_v3nc0OMV18CEVhmbz2R62UrGLcuzbnKaKup1DbPqCsN6FFuadMtAVK-eES7x97YTTCRvFWqHNrzx5EQ2Ha3oABHgRHnfqKrUG6knSwFvK3HQrFXIrwjrhydY8PQbc-SLqoYAFRaXyIN4nsvQmcORuAKSj_");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">AI &amp; Machine Learning</p>
@@ -166,10 +166,10 @@
 <p class="text-[#00C4CC] text-sm font-normal leading-normal flex items-center gap-2">
 <span class="material-symbols-outlined text-lg">group</span> 6.0k members
 </p>
-<button onclick="checkAuthAndJoin()" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
+<button onclick="checkAuthAndJoin(this)" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
 </div>
 </div>
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="General Web Dev" data-desc="A place for all web development discussions." data-category="Backend" data-members="8100">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="A developer working on a laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEVsdwtkZJ8ygTCiXCfJdW298jXFFPeacUt7hneO7ejaOTqgNKzpObFvWkneyG77q6L1yKiYqWLnYaKQBjCYNi1t638N9T8y6gVx6_Y5T1bR7iH2bvatgJTMKSi-WSd-9lDZSouTr47IgL6fOfYrK76Jqq7Fg0fHDikR7twTxrYXepKBm0LzV0je9_yAZUBCh8Eb0FS6vc-WMsloT7pkKofiIVtOR6bADwfX8DBnkpfGiJ5YZ_cUSyIEOGrkClrhyZtGXs-sSLfUKD");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">General Web Dev</p>
@@ -182,7 +182,7 @@
 <button class="bg-primary/30 hover:bg-primary/40 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">View Group</button>
 </div>
 </div>
-<div class="flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50">
+<div class="group-card flex flex-col gap-4 p-4 bg-white/5 rounded-xl border border-white/10 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/50" data-name="Mobile App Creators" data-desc="Share your native & hybrid app creations." data-category="Mobile" data-members="3200">
 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="A mobile phone displaying an app interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqD4KEwv-OOWM-eHd88tYJQpMeCx0nBuCgiOI39nLsRHQMyO831IpnfpFStPidBMHe9x53O6cu1aOfc8rndVYSYrwoLqc98IWkQcNZu7SlbPkLvhpRv_PaNtYD8GS-9AR_dPdgReoD48WFnp_zCyU_TMg8XciHG1lE9el3M8rblGSxagueAAT7kLXTZ4M-agu6OME5HIlq4wNToCAQ4V8GZqbGXORlzzcDtJUxnUAKjbQVD2FZzCpPo_Xf70VnIlql0nuiKEaxubMH");'></div>
 <div class="flex flex-col gap-2 flex-grow">
 <p class="text-white text-lg font-bold leading-normal">Mobile App Creators</p>
@@ -192,7 +192,7 @@
 <p class="text-[#00C4CC] text-sm font-normal leading-normal flex items-center gap-2">
 <span class="material-symbols-outlined text-lg">group</span> 3.2k members
 </p>
-<button onclick="checkAuthAndJoin()" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
+<button onclick="checkAuthAndJoin(this)" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full">Join Group</button>
 </div>
 </div>
 </div>
@@ -226,12 +226,71 @@ function checkAuthAndCreate() {
   }
 }
 
-function checkAuthAndJoin() {
+function checkAuthAndJoin(btn) {
   if (!Auth.isLoggedIn()) {
     window.location.href = 'login.html';
   } else {
     alert('Successfully joined the group!');
+    btn.textContent = 'View Group';
+    btn.className = 'bg-primary/30 hover:bg-primary/40 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors w-full';
+    btn.onclick = null;
   }
+}
+
+function searchGroups() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.group-card');
+  cards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const desc = card.dataset.desc.toLowerCase();
+    card.style.display = (name.includes(query) || desc.includes(query)) ? '' : 'none';
+  });
+}
+
+const categories = ['All', 'Frontend', 'Backend', 'Data Science', 'Mobile', 'AI/ML'];
+let categoryIndex = 0;
+function changeCategory(btn) {
+  categoryIndex = (categoryIndex + 1) % categories.length;
+  document.getElementById('categoryText').textContent = 'Category: ' + categories[categoryIndex];
+  btn.classList.add('bg-primary/20');
+  setTimeout(() => btn.classList.remove('bg-primary/20'), 300);
+  filterGroups();
+}
+
+const sortOptions = ['Popularity', 'Newest', 'Most Members', 'Alphabetical'];
+let sortIndex = 0;
+function changeSortBy(btn) {
+  sortIndex = (sortIndex + 1) % sortOptions.length;
+  document.getElementById('sortByText').textContent = 'Sort By: ' + sortOptions[sortIndex];
+  btn.classList.add('bg-primary/20');
+  setTimeout(() => btn.classList.remove('bg-primary/20'), 300);
+  sortGroups();
+}
+
+function filterGroups() {
+  const category = categories[categoryIndex];
+  const cards = document.querySelectorAll('.group-card');
+  cards.forEach(card => {
+    if (category === 'All' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function sortGroups() {
+  const container = document.getElementById('groupsContainer');
+  const cards = Array.from(document.querySelectorAll('.group-card'));
+  cards.sort((a, b) => {
+    if (sortOptions[sortIndex] === 'Most Members') {
+      return parseInt(b.dataset.members) - parseInt(a.dataset.members);
+    } else if (sortOptions[sortIndex] === 'Alphabetical') {
+      return a.dataset.name.localeCompare(b.dataset.name);
+    }
+    return 0;
+  });
+  cards.forEach(card => container.appendChild(card));
 }
 </script>
 </body></html>

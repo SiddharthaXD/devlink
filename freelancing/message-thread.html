@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Message Thread</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+.material-symbols-outlined {
+font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+</style>
+<script>
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"primary": "#f97306",
+"secondary": "#00BCD4",
+"background-dark": "#121212",
+"surface-dark": "#1e1e1e",
+"border-dark": "#2d2d2d",
+"text-primary-dark": "#e0e0e0",
+"text-secondary-dark": "#a0a0a0",
+},
+fontFamily: {
+"display": ["Space Grotesk", "sans-serif"]
+},
+},
+},
+}
+</script>
+</head>
+<body class="font-display bg-background-dark text-text-primary-dark">
+<div class="flex min-h-screen">
+<aside class="w-64 flex-shrink-0 bg-surface-dark p-6 flex flex-col justify-between">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+<h1 class="text-white text-xl font-bold">FreelanceHub</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-text-primary-dark" href="freelancer-profile.html">
+<span class="material-symbols-outlined">person</span>
+<p class="text-sm font-medium">Profile</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-text-primary-dark" href="freelancer-dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-text-primary-dark" href="find-work.html">
+<span class="material-symbols-outlined">search</span>
+<p class="text-sm font-medium">Find Work</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="messages.html">
+<span class="material-symbols-outlined">chat</span>
+<p class="text-sm font-medium">Messages</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-text-primary-dark" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 text-text-primary-dark" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col">
+<header class="bg-surface-dark border-b border-border-dark p-4 flex items-center gap-4">
+<button onclick="history.back()" class="text-text-secondary-dark hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
+<div>
+<h2 id="contactName" class="text-white font-bold">Alex Johnson</h2>
+<p class="text-text-secondary-dark text-sm">Active now</p>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6 space-y-4">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
+<div class="flex-1">
+<div class="bg-surface-dark rounded-lg p-4 max-w-lg">
+<p class="text-white">Hey! I saw your profile and I'm really impressed with your work. I have a project that might be perfect for you.</p>
+</div>
+<p class="text-text-secondary-dark text-xs mt-1">10:30 AM</p>
+</div>
+</div>
+<div class="flex gap-3 justify-end">
+<div class="flex-1 flex flex-col items-end">
+<div class="bg-primary rounded-lg p-4 max-w-lg">
+<p class="text-white">Thank you! I'd love to hear more about it. What kind of project are you working on?</p>
+</div>
+<p class="text-text-secondary-dark text-xs mt-1">10:32 AM</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
+<div class="flex-1">
+<div class="bg-surface-dark rounded-lg p-4 max-w-lg">
+<p class="text-white">It's a web application for a fintech startup. We need someone to help with the frontend architecture and UI implementation. The timeline is about 3 months.</p>
+</div>
+<p class="text-text-secondary-dark text-xs mt-1">10:35 AM</p>
+</div>
+</div>
+<div class="flex gap-3 justify-end">
+<div class="flex-1 flex flex-col items-end">
+<div class="bg-primary rounded-lg p-4 max-w-lg">
+<p class="text-white">That sounds interesting! I have experience with fintech projects. What tech stack are you using?</p>
+</div>
+<p class="text-text-secondary-dark text-xs mt-1">10:38 AM</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
+<div class="flex-1">
+<div class="bg-surface-dark rounded-lg p-4 max-w-lg">
+<p class="text-white">We're using React with TypeScript, Tailwind CSS for styling, and Node.js on the backend. Perfect, I've just sent over the final assets. Let me know what you think!</p>
+</div>
+<p class="text-text-secondary-dark text-xs mt-1">10:45 AM</p>
+</div>
+</div>
+</div>
+<footer class="bg-surface-dark border-t border-border-dark p-4">
+<div class="flex gap-3 items-center">
+<input type="file" id="fileInput" accept="image/*,video/*" class="hidden"/>
+<button onclick="document.getElementById('fileInput').click()" class="text-text-secondary-dark hover:text-white transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<input id="messageInput" type="text" placeholder="Type a message..." class="flex-1 bg-background-dark border border-border-dark rounded-lg px-4 py-3 text-white placeholder-text-secondary-dark focus:ring-2 focus:ring-primary focus:border-primary"/>
+<button onclick="sendMessage()" class="bg-primary text-white rounded-lg px-6 py-3 font-medium hover:bg-primary/90 transition-colors">Send</button>
+</div>
+</footer>
+</main>
+</div>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const contact = urlParams.get('contact') || 'alex';
+let messages = JSON.parse(localStorage.getItem('chat_' + contact) || '[]');
+const container = document.querySelector('.overflow-y-auto');
+function loadMessages() {
+    messages.forEach(msg => {
+        if (msg.type === 'text') {
+            const align = msg.sender === 'me' ? 'justify-end' : '';
+            const bg = msg.sender === 'me' ? 'bg-primary' : 'bg-surface-dark';
+            const html = `<div class="flex gap-3 ${align}"><div class="flex-1 flex flex-col ${msg.sender === 'me' ? 'items-end' : ''}"><div class="${bg} rounded-lg p-4 max-w-lg"><p class="text-white">${msg.content}</p></div><p class="text-text-secondary-dark text-xs mt-1">${msg.time}</p></div></div>`;
+            container.insertAdjacentHTML('beforeend', html);
+        } else {
+            const mediaHTML = msg.isImage ? `<img src="${msg.content}" class="rounded-lg max-w-xs"/>` : `<video src="${msg.content}" controls class="rounded-lg max-w-xs"></video>`;
+            const html = `<div class="flex gap-3 justify-end"><div class="flex-1 flex flex-col items-end"><div class="bg-primary rounded-lg p-2 max-w-lg">${mediaHTML}</div><p class="text-text-secondary-dark text-xs mt-1">${msg.time}</p></div></div>`;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    });
+    container.scrollTop = container.scrollHeight;
+}
+function sendMessage() {
+    const input = document.getElementById('messageInput');
+    const text = input.value.trim();
+    if (!text) return;
+    const time = new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
+    messages.push({type: 'text', sender: 'me', content: text, time});
+    localStorage.setItem('chat_' + contact, JSON.stringify(messages));
+    const msgHTML = `<div class="flex gap-3 justify-end"><div class="flex-1 flex flex-col items-end"><div class="bg-primary rounded-lg p-4 max-w-lg"><p class="text-white">${text}</p></div><p class="text-text-secondary-dark text-xs mt-1">${time}</p></div></div>`;
+    container.insertAdjacentHTML('beforeend', msgHTML);
+    container.scrollTop = container.scrollHeight;
+    input.value = '';
+}
+document.getElementById('messageInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+});
+document.getElementById('fileInput').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+        const time = new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
+        messages.push({type: 'media', sender: 'me', content: ev.target.result, isImage: file.type.startsWith('image/'), time});
+        localStorage.setItem('chat_' + contact, JSON.stringify(messages));
+        const isImage = file.type.startsWith('image/');
+        const mediaHTML = isImage ? `<img src="${ev.target.result}" class="rounded-lg max-w-xs"/>` : `<video src="${ev.target.result}" controls class="rounded-lg max-w-xs"></video>`;
+        const msgHTML = `<div class="flex gap-3 justify-end"><div class="flex-1 flex flex-col items-end"><div class="bg-primary rounded-lg p-2 max-w-lg">${mediaHTML}</div><p class="text-text-secondary-dark text-xs mt-1">${time}</p></div></div>`;
+        container.insertAdjacentHTML('beforeend', msgHTML);
+        container.scrollTop = container.scrollHeight;
+    };
+    reader.readAsDataURL(file);
+    e.target.value = '';
+});
+loadMessages();
+const names = {alex: 'Alex Johnson', samantha: 'Samantha Bee', marcus: 'Marcus Holloway', jasmine: 'Jasmine Lee', react: '#react-developers', olivia: 'Olivia Chen'};
+document.getElementById('contactName').textContent = names[contact] || 'Alex Johnson';
+</script>
+</body>
+</html>

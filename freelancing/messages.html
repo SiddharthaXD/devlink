@@ -40,7 +40,7 @@
       }
     </script>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-dark">
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-dark" onload="updateLastMessage()">
 <div class="flex min-h-screen">
 <aside class="w-64 flex-shrink-0 bg-background-light dark:bg-surface-dark p-6 flex flex-col justify-between">
 <div class="flex flex-col gap-8">
@@ -104,10 +104,10 @@
 <header class="flex flex-wrap justify-between items-center gap-4 mb-8">
 <h1 class="text-white text-4xl font-bold leading-tight tracking-tight">Messages</h1>
 <div class="flex items-center gap-4">
-<button class="text-text-secondary-dark hover:text-white transition-colors">
+<button onclick="archiveSelected()" class="text-text-secondary-dark hover:text-white transition-colors">
 <span class="material-symbols-outlined">archive</span>
 </button>
-<button class="bg-primary text-white font-bold py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors">
+<button onclick="window.location.href='freelancer_send_message.html'" class="bg-primary text-white font-bold py-2 px-6 rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors">
 <span class="material-symbols-outlined">edit</span>
                         New Message
                     </button>
@@ -120,15 +120,15 @@
 <input class="w-full bg-surface-dark border border-border-dark rounded-lg py-2 pl-10 pr-4 text-white placeholder-text-secondary-dark focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="Search messages..." type="text"/>
 </div>
 <div class="flex gap-2">
-<button class="px-4 py-2 text-sm font-medium rounded-lg bg-primary/20 text-primary">All</button>
-<button class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-white/10 text-text-primary-dark transition-colors">Unread</button>
-<button class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-white/10 text-text-primary-dark transition-colors">Archived</button>
+<button onclick="filterMessages('all')" id="filterAll" class="px-4 py-2 text-sm font-medium rounded-lg bg-primary/20 text-primary">All</button>
+<button onclick="filterMessages('unread')" id="filterUnread" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-white/10 text-text-primary-dark transition-colors">Unread</button>
+<button onclick="filterMessages('archived')" id="filterArchived" class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-white/10 text-text-primary-dark transition-colors">Archived</button>
 </div>
 </div>
 </section>
 <section class="bg-surface-dark rounded-xl border border-border-dark">
 <div class="flex flex-col">
-<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="#">
+<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="message-thread.html?contact=alex" data-status="unread" data-archived="false">
 <div class="relative shrink-0">
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
 <span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 border-2 border-surface-dark"></span>
@@ -139,12 +139,12 @@
 <p class="text-text-secondary-dark text-xs">10:45 AM</p>
 </div>
 <div class="flex justify-between items-end mt-1">
-<p class="text-text-secondary-dark text-sm truncate pr-4">Perfect, I've just sent over the final assets. Let me know what you think!</p>
+<p id="lastMsg1" class="text-text-secondary-dark text-sm truncate pr-4">Perfect, I've just sent over the final assets. Let me know what you think!</p>
 <span class="flex items-center justify-center size-6 rounded-full bg-primary text-white text-xs font-bold">2</span>
 </div>
 </div>
 </a>
-<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="#">
+<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="message-thread.html?contact=samantha" data-status="read" data-archived="false">
 <div class="relative shrink-0">
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
 </div>
@@ -153,10 +153,10 @@
 <h3 class="text-white font-medium">Samantha Bee</h3>
 <p class="text-text-secondary-dark text-xs">Yesterday</p>
 </div>
-<p class="text-text-secondary-dark text-sm truncate pr-4 mt-1">Great, thank you! I'll review this and get back to you by end of day.</p>
+<p id="lastMsg2" class="text-text-secondary-dark text-sm truncate pr-4 mt-1">Great, thank you! I'll review this and get back to you by end of day.</p>
 </div>
 </a>
-<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark bg-secondary/5" href="#">
+<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark bg-secondary/5" href="message-thread.html?contact=marcus" data-status="unread" data-archived="false">
 <div class="relative shrink-0">
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
 <span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-500 border-2 border-surface-dark"></span>
@@ -175,7 +175,7 @@
 </div>
 </div>
 </a>
-<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="#">
+<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="message-thread.html?contact=jasmine" data-status="read" data-archived="false">
 <div class="relative shrink-0">
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
 </div>
@@ -187,7 +187,7 @@
 <p class="text-text-secondary-dark text-sm truncate pr-4 mt-1">You: Here are the wireframes we discussed. Let me know your thoughts.</p>
 </div>
 </a>
-<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="#">
+<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer border-b border-border-dark" href="message-thread.html?contact=react" data-status="read" data-archived="false">
 <div class="relative shrink-0">
 <div class="size-12 rounded-full bg-secondary/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-secondary text-2xl">group</span>
@@ -201,7 +201,7 @@
 <p class="text-text-secondary-dark text-sm truncate pr-4 mt-1">Chris: Has anyone worked with the latest version of Zustand?</p>
 </div>
 </a>
-<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer" href="#">
+<a class="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors cursor-pointer" href="message-thread.html?contact=olivia" data-status="read" data-archived="false">
 <div class="relative shrink-0">
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
 </div>
@@ -218,5 +218,38 @@
 </div>
 </main>
 </div>
-
+<script>
+let currentFilter = 'all';
+function filterMessages(filter) {
+    currentFilter = filter;
+    const messages = document.querySelectorAll('section a[data-status]');
+    document.querySelectorAll('[id^="filter"]').forEach(btn => btn.className = 'px-4 py-2 text-sm font-medium rounded-lg hover:bg-white/10 text-text-primary-dark transition-colors');
+    document.getElementById('filter' + filter.charAt(0).toUpperCase() + filter.slice(1)).className = 'px-4 py-2 text-sm font-medium rounded-lg bg-primary/20 text-primary';
+    messages.forEach(msg => {
+        if (filter === 'all') msg.style.display = msg.dataset.archived === 'false' ? 'flex' : 'none';
+        else if (filter === 'unread') msg.style.display = msg.dataset.status === 'unread' && msg.dataset.archived === 'false' ? 'flex' : 'none';
+        else if (filter === 'archived') msg.style.display = msg.dataset.archived === 'true' ? 'flex' : 'none';
+    });
+}
+function archiveSelected() {
+    document.querySelectorAll('section a[data-status]').forEach(msg => {
+        if (msg.dataset.status === 'unread' && msg.dataset.archived === 'false') msg.dataset.archived = 'true';
+    });
+    filterMessages(currentFilter);
+}
+function updateLastMessage() {
+    ['alex', 'samantha'].forEach((contact, idx) => {
+        const messages = JSON.parse(localStorage.getItem('chat_' + contact) || '[]');
+        if (messages.length > 0) {
+            const lastMsg = messages[messages.length - 1];
+            const msgText = lastMsg.type === 'text' ? lastMsg.content : (lastMsg.isImage ? '📷 Image' : '🎥 Video');
+            const prefix = lastMsg.sender === 'me' ? 'You: ' : '';
+            const elem = document.getElementById('lastMsg' + (idx + 1));
+            if (elem) elem.textContent = prefix + msgText;
+        }
+    });
+}
+updateLastMessage();
+setInterval(updateLastMessage, 1000);
+</script>
 </body></html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freelancer Reviews Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FF7A00",
+            "secondary": "#00C4B3",
+            "background-light": "#F5F5F5",
+            "background-dark": "#1A1A1A",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"],
+            "sans": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark dark font-sans group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-dark p-4 pb-2 justify-between">
+<button onclick="history.back()" class="text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-display">Your Reviews</h1>
+<div class="size-12 shrink-0"></div>
+</div>
+<div class="flex flex-col items-center gap-6 p-4">
+<div class="flex flex-col items-center gap-2">
+<p class="text-primary text-5xl font-bold leading-tight tracking-[-0.033em] font-display">4.9</p>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-[#A9A9A9] text-base font-normal leading-normal">Based on 125 reviews</p>
+</div>
+<div class="grid w-full max-w-sm grid-cols-[20px_1fr_40px] items-center gap-x-3 gap-y-3">
+<p class="text-white text-sm font-normal leading-normal">5</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#333333]">
+<div class="rounded-full bg-primary" style="width: 85%;"></div>
+</div>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal text-right">85%</p>
+<p class="text-white text-sm font-normal leading-normal">4</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#333333]">
+<div class="rounded-full bg-primary" style="width: 10%;"></div>
+</div>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal text-right">10%</p>
+<p class="text-white text-sm font-normal leading-normal">3</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#333333]">
+<div class="rounded-full bg-primary" style="width: 3%;"></div>
+</div>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal text-right">3%</p>
+<p class="text-white text-sm font-normal leading-normal">2</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#333333]">
+<div class="rounded-full bg-primary" style="width: 1%;"></div>
+</div>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal text-right">1%</p>
+<p class="text-white text-sm font-normal leading-normal">1</p>
+<div class="flex h-2 flex-1 overflow-hidden rounded-full bg-[#333333]">
+<div class="rounded-full bg-primary" style="width: 1%;"></div>
+</div>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal text-right">1%</p>
+</div>
+</div>
+<div class="px-4 py-2">
+<hr class="border-t border-[#333333]"/>
+</div>
+<div class="px-4 pt-4 pb-2">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<p class="text-white font-medium text-base">Sort by:</p>
+<div class="flex items-center gap-3">
+<button id="recentBtn" onclick="sortReviews('recent')" class="rounded-full bg-primary px-4 py-2 text-sm font-medium text-black">Most Recent</button>
+<button id="helpfulBtn" onclick="sortReviews('helpful')" class="rounded-full border border-[#444444] bg-[#333333] px-4 py-2 text-sm font-medium text-white">Most Helpful</button>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 rounded-full border border-primary bg-primary/20 px-4 py-2 text-sm font-medium text-primary">
+<span class="material-symbols-outlined text-base">tune</span>
+<span>Filters</span>
+</button>
+<div class="relative">
+<select id="ratingFilter" onchange="applyFilters()" class="rounded-full border border-[#444444] bg-[#333333] py-2 pl-4 pr-10 text-sm font-medium text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="">All Ratings</option>
+<option value="5">5 Stars</option>
+<option value="4">4 Stars</option>
+<option value="3">3 Stars</option>
+<option value="2">2 Stars</option>
+<option value="1">1 Star</option>
+</select>
+</div>
+<div class="relative">
+<select id="projectFilter" onchange="applyFilters()" class="rounded-full border border-[#444444] bg-[#333333] py-2 pl-4 pr-10 text-sm font-medium text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+<option value="">All Projects</option>
+<option value="UI/UX Redesign for Mobile App">UI/UX Redesign for Mobile App</option>
+<option value="E-commerce Website Development">E-commerce Website Development</option>
+<option value="Brand Identity & Logo Design">Brand Identity & Logo Design</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div id="reviewsContainer" class="flex flex-col gap-8 bg-background-dark p-4">
+<div class="review-card flex flex-col gap-3 bg-background-dark" data-rating="5" data-project="UI/UX Redesign for Mobile App" data-date="2024-11-15" data-helpful="45">
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar of Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEdIxaLkr9yXZu91e2JbKPvrAD05QF3QsZpmB8M7Wk6qzivOk56BCKM9LI4TKLZRuu9jVC41mvq8zoBBOB0Jizi-IVDLHRWfdQ3yEenYjPR9UsW5f-TyQyt6Zr4NTOl9cJRp7ErsyjugbgN64vc8-CQaRvQ0usxOKu4iChEJpFJ2K_XoboAY3uq8yfr1tr79_CoQgC-A2w48dsoh7q_9nAeQHm8OtvIL045-WimPybEiIeEoAileO5l1ShZ8vzfzAr7_-kr616wZIi");'></div>
+<div class="flex-1">
+<p class="text-white text-base font-medium leading-normal">Jane Doe</p>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal">2 weeks ago</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<a class="text-secondary text-sm font-medium hover:underline" href="#">Project: UI/UX Redesign for Mobile App</a>
+<p class="text-white text-base font-normal leading-relaxed">
+          Incredible work! Delivered the project ahead of schedule with exceptional quality. Communication was seamless throughout the entire process. Highly recommend and will definitely hire again for future projects.
+        </p>
+<div class="mt-2 border-l-2 border-primary/50 pl-4">
+<p class="text-white font-medium text-sm">Your response:</p>
+<p class="text-[#A9A9A9] text-base leading-relaxed mt-1">
+            Thank you, Jane! It was a pleasure working with you on the UI/UX redesign. I'm thrilled you're happy with the results.
+          </p>
+</div>
+</div>
+<div class="review-card flex flex-col gap-3 bg-background-dark" data-rating="5" data-project="E-commerce Website Development" data-date="2024-10-20" data-helpful="32">
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar of John Smith" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADXK6fWzN5bTcMaX4fWtbOkJs7eib2Sjnf_XXrP6VuJ2AZ-IrTuNV6IuX6pimX78OaY3A6txtDfkzdIxqMM_LiXaA9JnNAh4rebbbc1j_Uta6D-ng7jNvhtZSe09ZPObTt3ldsV7NvuGsCaHUcYVFn8j5bkpaY0PuEZpLh63b10STcmhDFLFydL61LwrwHGoUu3y9BjnHhDSWqiP8pcuRFueU-OkB3Si0sIPwb8AvY0UjqIraQJaH2zdKSzdMpyWW03s2TyEhKJOcF");'></div>
+<div class="flex-1">
+<p class="text-white text-base font-medium leading-normal">John Smith</p>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal">1 month ago</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<a class="text-secondary text-sm font-medium hover:underline" href="#">Project: E-commerce Website Development</a>
+<p class="text-white text-base font-normal leading-relaxed">
+          A true professional. They understood the requirements perfectly and added their own creative touch which elevated the final product. Very satisfied with the outcome.
+        </p>
+<button class="mt-2 flex items-center gap-2 self-start rounded-full bg-[#333333] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#444444]">
+<span class="material-symbols-outlined text-base">reply</span>
+<span>Respond to this review</span>
+</button>
+</div>
+<div class="review-card flex flex-col gap-3 bg-background-dark" data-rating="4" data-project="Brand Identity & Logo Design" data-date="2024-08-15" data-helpful="58">
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Avatar of Alex Ray" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdmi9Hk6XM9EblcHG5CuSkaNoxfHEUFTyF1Tq3A2w3v7dtPQoHozYk_08Op7HyJqHMvvtNygG1VZVe1R-KF91v8UQ8kSq3QvSKKFS1UGgL344azKLf157dKCTw-mZ6-6fGX3A74PRxwJd5SWHltBMhbLJn-gTyH9Q4Xbk9Ct9v9btZuILoFr0pBJkMXbhsVRB9QVooZ5Me9wVr3eHgzRfm4F60omcFvY3ZH1g7pUmnUmTQLJqkFZg11hInabptFFlcC9NxbL_eWuUn");'></div>
+<div class="flex-1">
+<p class="text-white text-base font-medium leading-normal">Alex Ray</p>
+<p class="text-[#A9A9A9] text-sm font-normal leading-normal">3 months ago</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-base">star</span>
+</div>
+</div>
+<a class="text-secondary text-sm font-medium hover:underline" href="#">Project: Brand Identity &amp; Logo Design</a>
+<p class="text-white text-base font-normal leading-relaxed">
+          Good experience overall. The freelancer was responsive and delivered what was asked. There were a few minor revisions needed, but they were handled promptly.
+        </p>
+<button class="mt-2 flex items-center gap-2 self-start rounded-full bg-[#333333] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#444444]">
+<span class="material-symbols-outlined text-base">reply</span>
+<span>Respond to this review</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+function applyFilters() {
+  const rating = document.getElementById('ratingFilter').value;
+  const project = document.getElementById('projectFilter').value;
+  const cards = document.querySelectorAll('.review-card');
+  
+  cards.forEach(card => {
+    let show = true;
+    if (rating && card.dataset.rating !== rating) show = false;
+    if (project && card.dataset.project !== project) show = false;
+    card.style.display = show ? 'flex' : 'none';
+  });
+}
+
+function sortReviews(type) {
+  const container = document.getElementById('reviewsContainer');
+  const cards = Array.from(document.querySelectorAll('.review-card'));
+  const recentBtn = document.getElementById('recentBtn');
+  const helpfulBtn = document.getElementById('helpfulBtn');
+  
+  if (type === 'recent') {
+    cards.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
+    recentBtn.className = 'rounded-full bg-primary px-4 py-2 text-sm font-medium text-black';
+    helpfulBtn.className = 'rounded-full border border-[#444444] bg-[#333333] px-4 py-2 text-sm font-medium text-white';
+  } else {
+    cards.sort((a, b) => parseInt(b.dataset.helpful) - parseInt(a.dataset.helpful));
+    helpfulBtn.className = 'rounded-full bg-primary px-4 py-2 text-sm font-medium text-black';
+    recentBtn.className = 'rounded-full border border-[#444444] bg-[#333333] px-4 py-2 text-sm font-medium text-white';
+  }
+  
+  cards.forEach(card => container.appendChild(card));
+}
+</script>
+</body></html>

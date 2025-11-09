@@ -148,9 +148,9 @@ function UserProfile() {
 <!-- Answer Card 1 -->
 <div class="bg-surface-dark rounded-xl border border-border-dark p-6 flex gap-4">
 <div class="flex flex-col items-center gap-2">
-<button class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_up</span></button>
-<span class="text-white font-bold text-lg">125</span>
-<button class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_down</span></button>
+<button id="up1" onclick="vote(1, 'up')" class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_up</span></button>
+<span id="vote1" class="text-white font-bold text-lg">125</span>
+<button id="down1" onclick="vote(1, 'down')" class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_down</span></button>
 </div>
 <div class="flex-1">
 <p class="text-text-dim leading-relaxed mb-4">For large-scale applications, using a dedicated state management library like Redux Toolkit is the recommended approach. It's designed to be predictable and scalable. When combined with React hooks (`useSelector`, `useDispatch`), it provides a clean and efficient way to manage global state without prop-drilling.</p>
@@ -169,9 +169,9 @@ function UserProfile() {
 <!-- Answer Card 2 -->
 <div class="bg-surface-dark rounded-xl border border-border-dark p-6 flex gap-4">
 <div class="flex flex-col items-center gap-2">
-<button class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_up</span></button>
-<span class="text-white font-bold text-lg">42</span>
-<button class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_down</span></button>
+<button id="up2" onclick="vote(2, 'up')" class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_up</span></button>
+<span id="vote2" class="text-white font-bold text-lg">42</span>
+<button id="down2" onclick="vote(2, 'down')" class="text-text-muted hover:text-primary transition-colors"><span class="material-symbols-outlined text-3xl">arrow_drop_down</span></button>
 </div>
 <div class="flex-1">
 <p class="text-text-dim leading-relaxed mb-4">While external libraries are powerful, don't overlook the combination of `useContext` and `useReducer`. For state that is complex but localized to a specific part of your component tree, this pattern can be very effective without adding another dependency.</p>
@@ -192,16 +192,18 @@ function UserProfile() {
 <h2 class="text-white text-2xl font-bold">Post Your Answer</h2>
 <div class="bg-surface-dark rounded-xl border border-border-dark p-1">
 <div class="flex items-center gap-1 p-2 border-b border-border-dark">
-<button class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">format_bold</span></button>
-<button class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">format_italic</span></button>
-<button class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">format_list_bulleted</span></button>
-<button class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">code</span></button>
-<button class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">image</span></button>
-<button class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">video_camera_front</span></button>
+<button onclick="alert('Bold formatting')" class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">format_bold</span></button>
+<button onclick="alert('Italic formatting')" class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">format_italic</span></button>
+<button onclick="alert('List formatting')" class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">format_list_bulleted</span></button>
+<button onclick="alert('Code snippet')" class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">code</span></button>
+<input type="file" id="answerImage" accept="image/*" class="hidden"/>
+<button onclick="document.getElementById('answerImage').click()" class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">image</span></button>
+<input type="file" id="answerVideo" accept="video/*" class="hidden"/>
+<button onclick="document.getElementById('answerVideo').click()" class="p-2 rounded-md text-text-muted hover:bg-background-dark transition-colors"><span class="material-symbols-outlined">video_camera_front</span></button>
 </div>
 <textarea class="form-textarea w-full min-h-48 resize-y bg-surface-dark text-text-dim border-none focus:ring-0 placeholder:text-text-muted p-4" placeholder="Type your detailed answer here..."></textarea>
 </div>
-<button class="flex w-full sm:w-auto self-start min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<button onclick="alert('Answer posted successfully!')" class="flex w-full sm:w-auto self-start min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
                              Post Your Answer
                          </button>
 </div>
@@ -232,11 +234,14 @@ function UserProfile() {
 </div>
 <!-- Action Buttons -->
 <div class="bg-surface-dark rounded-xl border border-border-dark p-5 flex flex-col gap-3">
-<button class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal hover:bg-primary/30 transition-colors">
+<button onclick="followQuestion()" class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal hover:bg-primary/30 transition-colors">
 <span class="material-symbols-outlined text-xl">bookmark_add</span>
 <span class="truncate">Follow Question</span>
 </button>
-<button class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-4 bg-accent-teal/10 text-accent-teal text-sm font-bold leading-normal hover:bg-accent-teal/20 transition-colors">
+<div id="followNotification" class="hidden bg-secondary/20 border border-secondary/50 rounded-lg p-4 text-secondary text-sm font-medium">
+Added to followed question list
+</div>
+<button onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!')" class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-4 bg-accent-teal/10 text-accent-teal text-sm font-bold leading-normal hover:bg-accent-teal/20 transition-colors">
 <span class="material-symbols-outlined text-xl">share</span>
 <span class="truncate">Share</span>
 </button>
@@ -245,4 +250,20 @@ function UserProfile() {
 </div>
 </main>
 </div>
+<script>
+const votes = {};
+function vote(id, type) {
+    if (votes[id]) return;
+    votes[id] = type;
+    const count = document.getElementById('vote' + id);
+    count.textContent = parseInt(count.textContent) + (type === 'up' ? 1 : -1);
+    document.getElementById('up' + id).disabled = true;
+    document.getElementById('down' + id).disabled = true;
+}
+function followQuestion() {
+    const notification = document.getElementById('followNotification');
+    notification.classList.remove('hidden');
+    setTimeout(() => notification.classList.add('hidden'), 3000);
+}
+</script>
 </body></html>

@@ -82,24 +82,13 @@
 <form class="space-y-6">
 <div>
 <label class="block text-sm font-medium text-white/80 mb-2" for="recipient">To</label>
-<div class="flex items-start gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 flex-shrink-0" data-alt="avatar of a professional woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCykTSdJ_r8FpLXltQeiwEnTRWokejJz_GoNPuebFO_ItTBTBuWpOWFREwuN0smEcaYtawLFHR7foGdNEosSb0yjpNFREtERAkZDOtBgggiSi8FDP73h6_FOeo885-WWny6Stlp_sCwn7e1BSf8jkJUnsi5CpB4_P0SIIxvFKBw1lTLF25eIpy-9zDt8UV2BfRdcqXGuCas0I2CTwCoxUMxmLMLWBXN6k4MbPhxNYwKFkT1_73k1cenHJQYgU0-BGnUmV2wYv-y2fM8");'></div>
-<div class="flex-1">
-<div class="w-full bg-background-dark px-4 py-2 rounded-lg">
-<div class="text-white">
-<span class="font-semibold">Alexia V.</span>
-<span class="text-white/60 ml-2">Senior Frontend Developer</span>
-</div>
-<div class="flex items-center gap-2 mt-1.5">
-<span class="relative flex h-2.5 w-2.5">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-</span>
-<span class="text-xs font-medium text-green-400">Available now</span>
-</div>
-</div>
-</div>
-</div>
+<select id="recipient" class="w-full bg-background-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-primary transition">
+<option value="alex">Alex Johnson</option>
+<option value="samantha">Samantha Bee</option>
+<option value="marcus">Marcus Holloway</option>
+<option value="jasmine">Jasmine Lee</option>
+<option value="olivia">Olivia Chen</option>
+</select>
 </div>
 <div>
 <label class="block text-sm font-medium text-white/80 mb-2" for="subject">Subject</label>
@@ -117,7 +106,7 @@
 <input class="hidden" id="attachment" name="attachment" type="file"/>
 </div>
 <div class="border-t border-white/10 pt-6 flex justify-end">
-<button class="flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary text-white font-bold transition-transform hover:scale-105" type="submit">
+<button onclick="sendNewMessage(event)" class="flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary text-white font-bold transition-transform hover:scale-105" type="button">
 <span class="material-symbols-outlined">send</span>
 <span>Send Message</span>
 </button>
@@ -127,4 +116,14 @@
 </div>
 </main>
 </div>
+<script>
+function sendNewMessage(e) {
+    e.preventDefault();
+    const contact = document.getElementById('recipient').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    if (!message.trim()) return alert('Please enter a message');
+    window.location.href = 'message-thread.html?contact=' + contact;
+}
+</script>
 </body></html>

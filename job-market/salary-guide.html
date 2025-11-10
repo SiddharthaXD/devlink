@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salary Guide - JobSeek</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"primary": "#20c997",
+"background-light": "#F8F9FA",
+"background-dark": "#101822",
+"neutral-light": "#E9ECEF",
+"neutral-dark": "#343a40",
+"amber": "#ffc107"
+},
+fontFamily: {"display": ["Inter", "sans-serif"]}
+}
+}
+}
+</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 w-full border-b border-neutral-light/60 dark:border-neutral-dark/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="mx-auto flex max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="size-9 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_543)">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+</svg>
+</div>
+<h2 class="text-2xl font-bold">JobSeek</h2>
+</div>
+<nav class="hidden items-center gap-10 md:flex">
+<a class="text-base font-medium hover:text-primary" href="find-job.html">Find Jobs</a>
+<a class="text-base font-medium hover:text-primary" href="company-reviews.html">Company Reviews</a>
+<a class="text-base font-bold text-primary" href="salary-guide.html">Salary Guide</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden min-w-[84px] h-10 px-4 bg-neutral-light dark:bg-neutral-dark text-sm font-bold rounded-lg hover:bg-neutral-light/80 dark:hover:bg-neutral-dark/80 sm:flex items-center justify-center">Post a Job</button>
+<button class="hidden sm:inline-block min-w-[84px] h-10 px-4 bg-transparent text-sm font-bold border border-neutral-light/80 dark:border-neutral-dark/80 rounded-lg hover:bg-neutral-light/60 dark:hover:bg-neutral-dark/60">Login</button>
+<button class="hidden sm:inline-block min-w-[84px] h-10 px-4 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary/90">Sign Up</button>
+</div>
+</div>
+</header>
+<main class="w-full flex-grow">
+<section class="py-20 sm:py-24 lg:py-32">
+<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-7xl">Know Your Worth</h1>
+<p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">Explore salary data for thousands of roles. Get the insights you need to negotiate with confidence.</p>
+</div>
+<div class="mt-12 max-w-5xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2 bg-white dark:bg-neutral-dark/40 border border-neutral-light dark:border-neutral-dark/60 p-2 rounded-xl shadow-lg">
+<div class="flex items-center col-span-12 md:col-span-8">
+<span class="material-symbols-outlined text-gray-400 pl-3 pr-2">work</span>
+<input class="w-full bg-transparent border-0 focus:ring-0 text-base placeholder:text-gray-500" placeholder="Job title, company, or industry" type="text" value="Senior Product Designer"/>
+</div>
+<div class="flex items-center col-span-12 md:col-span-4">
+<button class="w-full h-12 px-6 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors text-base">Search Salaries</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="pb-20 sm:pb-24 lg:pb-28">
+<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row lg:items-start lg:gap-12">
+<div class="lg:w-1/3 mb-10 lg:mb-0">
+<h2 class="text-2xl font-bold">Filter Results</h2>
+<div class="mt-6 space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Location</label>
+<div class="mt-2 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">location_on</span>
+<input class="block w-full rounded-lg border-neutral-light/80 dark:border-neutral-dark/60 bg-white dark:bg-neutral-dark/40 pl-10 pr-4 py-2.5 focus:border-primary focus:ring-primary" placeholder="e.g. San Francisco, CA" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Years of Experience</label>
+<select class="mt-2 block w-full rounded-lg border-neutral-light/80 dark:border-neutral-dark/60 bg-white dark:bg-neutral-dark/40 py-2.5 px-3 focus:border-primary focus:ring-primary">
+<option>Any</option>
+<option>0-2 years</option>
+<option>3-5 years</option>
+<option>6-9 years</option>
+<option>10+ years</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Company Size</label>
+<select class="mt-2 block w-full rounded-lg border-neutral-light/80 dark:border-neutral-dark/60 bg-white dark:bg-neutral-dark/40 py-2.5 px-3 focus:border-primary focus:ring-primary">
+<option>All sizes</option>
+<option>1-50 employees</option>
+<option>51-200 employees</option>
+<option>201-1000 employees</option>
+<option>1000+ employees</option>
+</select>
+</div>
+</div>
+</div>
+<div class="lg:w-2/3">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+<h2 class="text-3xl font-bold">Salary for Senior Product Designer</h2>
+<p class="mt-2 sm:mt-0 text-gray-500 dark:text-gray-400">Based on 1,284 salaries</p>
+</div>
+<div class="mt-8 p-6 bg-white dark:bg-neutral-dark/30 rounded-xl border border-neutral-light dark:border-neutral-dark/60">
+<p class="text-sm text-gray-500 dark:text-gray-400">National Average</p>
+<p class="text-5xl font-extrabold text-primary mt-2">$145,000<span class="text-2xl font-semibold text-gray-500 dark:text-gray-400">/year</span></p>
+<div class="mt-6">
+<div class="relative w-full h-4 bg-neutral-light dark:bg-neutral-dark rounded-full">
+<div class="absolute h-4 rounded-full bg-gradient-to-r from-amber to-primary" style="left: 15%; width: 70%;"></div>
+<div class="absolute top-1/2 left-1/2 w-1 h-6 bg-text-light dark:bg-text-dark -translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute top-full mt-2 text-center" style="left: 15%;">
+<p class="text-sm font-semibold">$110k</p>
+<p class="text-xs text-gray-500">Low</p>
+</div>
+<div class="absolute top-full mt-2 text-center" style="left: 50%; transform: translateX(-50%);">
+<p class="text-sm font-semibold">$145k</p>
+<p class="text-xs text-gray-500">Median</p>
+</div>
+<div class="absolute top-full mt-2 text-center" style="right: 15%;">
+<p class="text-sm font-semibold">$190k</p>
+<p class="text-xs text-gray-500">High</p>
+</div>
+</div>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-400 mt-12 text-center">The estimated total pay for a Senior Product Designer is $145,000 per year, with an average salary of $130,000 per year. These numbers represent the median, which is the midpoint of the ranges from our proprietary Total Pay Estimate model and based on salaries collected from our users.</p>
+</div>
+<div class="mt-12">
+<h3 class="text-2xl font-bold">Salaries by Company</h3>
+<div class="mt-6 space-y-4">
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-neutral-dark/30 rounded-xl border border-neutral-light dark:border-neutral-dark/60">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg border border-neutral-light dark:border-neutral-dark bg-white dark:bg-neutral-dark/50">
+<img class="h-7 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKyldawoqNgv4P3FN8fvOFXLUT9VVGb6kdmNR474Ju7oon7bh4ZnR4IToytcUumWbwIVWUvlGHeZoArnqx8LrJcDU09GE9mL05gbtrkfrhetddQLAwtCPWGboR1kPp-ghALhkpdkQOaV7JIluENpQ0XUQssvP55iQYb9_za_iPr_XtnppBM6LZ6Vkk92dl-j_yo7DfDoKr6C-PqQYgzxP5UW5otEY5FasDmDLnP2sRSNVBqWlQPwU3pbJxxLeitRwe5pSnoLhAiIZD"/>
+</div>
+<div class="flex-grow">
+<p class="font-semibold">Stripe</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Based on 88 salaries</p>
+</div>
+<p class="text-lg font-bold text-primary">$172,500/yr</p>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-neutral-dark/30 rounded-xl border border-neutral-light dark:border-neutral-dark/60">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg border border-neutral-light dark:border-neutral-dark bg-white dark:bg-neutral-dark/50">
+<img class="h-7 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC_SJ8uovf4Mz1ARATdWYG42ytYVn5T1FZYNqB3bm9FGRSntmhYWvJ4JF6IyCCjRI7hUvOFzzrx8lBAw3iCHB6K4d6UDu2q4RE2_9IwpJhiaOsoFRhiq3FUCnG4usN9cyi1Va06-5A_R8_uSe2t8h51nNZZ2QsuWOz27x9_NxLeFHJQ4FlWcLFdvYy6LegM8HJxqi6e_9o-Bu5R9ABzeS1qRxYyAbVCh-XgCfM-pBsoNchwlaYfgpMW2WyG55Wi8W7OCEfn7Ng9VWv"/>
+</div>
+<div class="flex-grow">
+<p class="font-semibold">Google</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Based on 152 salaries</p>
+</div>
+<p class="text-lg font-bold text-primary">$168,000/yr</p>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-neutral-dark/30 rounded-xl border border-neutral-light dark:border-neutral-dark/60">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-lg border border-neutral-light dark:border-neutral-dark bg-white dark:bg-neutral-dark/50">
+<img class="h-7 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRz6TU5NIK2W_JEBCk2yGqCoWNamJoTze-94qSvNZfvH3L-wqXZUXcaxRUoRYLAjwA4jarb2lZ5fNuRRpYn09yDaQDmdPeGthGi-8n5PfMDjqUC9afxzYdpImkznDePwwdemoVKCMdYaczQ-orBHHy8MDWCaNzqbkLQOuUJuh2JeRc1fuPOEhnzPuc_CiwkS1vUNDGYoSzarA3hNoreonylTO29UubPYP1xJlhthcN-BhDWO-g4_4sRaT1G6PtTgsksRYFezjbekDP"/>
+</div>
+<div class="flex-grow">
+<p class="font-semibold">Shopify</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Based on 64 salaries</p>
+</div>
+<p class="text-lg font-bold text-primary">$155,000/yr</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-24 lg:py-28 bg-neutral-light/30 dark:bg-neutral-dark/20">
+<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-12 rounded-xl bg-primary/90 dark:bg-primary/50 p-10 md:p-16 lg:grid-cols-2 lg:items-center">
+<div class="text-white">
+<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Help the Community, Share Your Salary</h2>
+<p class="mt-4 max-w-lg text-lg">Contribute your salary data anonymously to help other professionals like you make informed career decisions. It's fast, easy, and completely confidential.</p>
+</div>
+<div class="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center lg:justify-end">
+<button class="flex h-12 items-center justify-center whitespace-nowrap rounded-lg bg-white px-8 text-base font-bold text-primary shadow transition-transform hover:scale-105">Submit Salary Data</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body>
+</html>

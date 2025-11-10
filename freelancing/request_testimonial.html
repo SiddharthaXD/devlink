@@ -1,111 +1,61 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Request Testimonial</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
             colors: {
-              "primary": "#FF7A00",
-              "secondary": "#00C4B3",
-              "background-light": "#F5F5F5",
-              "background-dark": "#1A1A1A",
-              "surface-dark": "#2C2C2C",
-              "text-light": "#E0E0E0",
-              "text-dark": "#BDBDBD",
-              "border-dark": "#424242"
+                "primary": "#ff7a00",
+                "secondary": "#00c4b3",
+                "background-dark": "#1a1a1a",
+                "text-light": "#ffffff",
+                "text-dark": "#b3b3b3",
             },
             fontFamily: {
-              "display": ["Space Grotesk", "sans-serif"],
-              "body": ["Inter", "sans-serif"]
+                "display": ["Space Grotesk", "sans-serif"],
+                "body": ["Inter", "sans-serif"]
             },
-            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
-          },
         },
-      }
-    </script>
-<style>
-        .form-select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-            background-position: right 0.75rem center;
-            background-repeat: no-repeat;
-            background-size: 1.5em 1.5em;
-            padding-right: 2.5rem;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark font-body">
-<div class="relative flex min-h-screen w-full flex-col">
-<!-- Top App Bar -->
-<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-3 sticky top-0 z-10 border-b border-transparent dark:border-border-dark/50">
-<button class="text-text-light flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
+    },
+}
+</script>
+</head>
+<body class="bg-background-dark font-body text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 flex items-center bg-background-dark/80 p-4 backdrop-blur-sm">
+<button onclick="history.back()" class="text-text-light flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
 <span class="material-symbols-outlined text-2xl">arrow_back</span>
 </button>
-<h1 class="text-text-light text-xl font-display font-bold leading-tight tracking-tight flex-1 text-center -ml-10">Request a Testimonial</h1>
+<h1 class="text-text-light text-xl font-bold font-display leading-tight flex-1 text-center pr-10">Request Testimonial</h1>
 </header>
-<main class="flex flex-col flex-grow px-4 pt-6 pb-8">
-<div class="flex flex-col gap-8">
-<!-- Section: Select a Past Job -->
+<main class="flex flex-col gap-6 p-4">
+<div class="flex flex-col rounded-xl bg-zinc-900/50 p-6 ring-1 ring-white/10">
+<h2 class="font-display text-2xl font-bold leading-tight tracking-tight text-text-light mb-4">Send Testimonial Request</h2>
+<p class="text-base text-text-dark mb-6">Request a testimonial from your client for the completed project.</p>
+<form class="flex flex-col gap-4">
 <div>
-<h2 class="text-text-light text-lg font-display font-bold leading-tight tracking-tight px-0 pb-3">Select a Past Job</h2>
-<div class="space-y-4">
-<!-- Client Selector -->
-<label class="flex flex-col w-full">
-<p class="text-text-dark text-sm font-medium leading-normal pb-2 font-body">Client</p>
-<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light focus:outline-none focus:ring-2 focus:ring-primary border border-border-dark bg-surface-dark h-14 placeholder:text-text-dark px-4 text-base font-normal leading-normal">
-<option disabled="" selected="" value="">Select a client</option>
-<option value="client1">Sarah Jennings</option>
-<option value="client2">Mark Robinson</option>
-<option value="client3">Innovate Inc.</option>
-</select>
-</label>
-<!-- Project Selector -->
-<label class="flex flex-col w-full">
-<p class="text-text-dark text-sm font-medium leading-normal pb-2 font-body">Project</p>
-<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light focus:outline-none focus:ring-2 focus:ring-primary border border-border-dark bg-surface-dark h-14 placeholder:text-text-dark px-4 text-base font-normal leading-normal disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
-<option disabled="" selected="" value="">Select a project</option>
-<option value="project1">E-commerce Platform Redesign</option>
-<option value="project2">Mobile App UI/UX</option>
-</select>
-</label>
+<label class="block text-sm font-medium text-text-light mb-2">Client Email</label>
+<input type="email" placeholder="client@example.com" class="w-full rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-text-light placeholder-text-dark focus:border-primary focus:outline-none"/>
 </div>
-</div>
-<!-- Section: Personalize Your Message -->
 <div>
-<h2 class="text-text-light text-lg font-display font-bold leading-tight tracking-tight px-0 pb-3">Personalize Your Message</h2>
-<div class="relative">
-<label class="sr-only" for="message">Message</label>
-<textarea class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light focus:outline-none focus:ring-2 focus:ring-primary border border-border-dark bg-surface-dark placeholder:text-text-dark p-4 text-base font-normal leading-relaxed font-body" id="message" rows="8">Hi [Client Name], I hope you're well. I really enjoyed working on the [Project Name] project with you. If you have a moment, would you be willing to write a short testimonial about our collaboration?</textarea>
-<span class="absolute bottom-3 right-4 text-xs text-text-dark font-body">245/500</span>
+<label class="block text-sm font-medium text-text-light mb-2">Project Name</label>
+<input type="text" placeholder="E-commerce Platform Redesign" class="w-full rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-text-light placeholder-text-dark focus:border-primary focus:outline-none"/>
 </div>
-<div class="flex items-start gap-2 pt-3">
-<span class="material-symbols-outlined text-secondary text-base mt-0.5">info</span>
-<p class="text-secondary text-xs font-medium font-body flex-1">Personalize your message to increase the chance of a response.</p>
+<div>
+<label class="block text-sm font-medium text-text-light mb-2">Personal Message (Optional)</label>
+<textarea rows="4" placeholder="Add a personal message to your testimonial request..." class="w-full rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-text-light placeholder-text-dark focus:border-primary focus:outline-none"></textarea>
 </div>
-</div>
-</div>
-<!-- Spacer to push button to bottom -->
-<div class="flex-grow"></div>
-<!-- Action Button -->
-<div class="pt-8">
-<button class="flex w-full items-center justify-center rounded-full bg-primary h-14 px-6 text-background-dark text-base font-bold font-body hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-dark focus:ring-primary transition-colors">Send Request</button>
+<button type="button" onclick="alert('Testimonial request sent successfully!'); history.back();" class="w-full rounded-lg bg-primary py-3 px-4 text-center font-display font-bold text-background-dark transition-opacity hover:opacity-90">
+Send Request
+</button>
+</form>
 </div>
 </main>
 </div>

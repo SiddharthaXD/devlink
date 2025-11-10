@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apply - Review & Submit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"primary": "#20c997",
+"background-light": "#F8F9FA",
+"background-dark": "#101822",
+"neutral-light": "#E9ECEF",
+"neutral-dark": "#343a40"
+},
+fontFamily: {"display": ["Inter", "sans-serif"]}
+}
+}
+}
+</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="min-h-screen flex items-center justify-center p-4">
+<div class="max-w-2xl w-full bg-white dark:bg-neutral-dark rounded-xl shadow-xl p-8">
+<div class="mb-8">
+<div class="flex items-center justify-between mb-6">
+<h1 class="text-3xl font-bold">Apply for Job</h1>
+<a href="find-job.html" class="text-gray-400 hover:text-gray-600"><span class="material-symbols-outlined">close</span></a>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<div class="flex-1 h-2 bg-primary rounded-full"></div>
+<div class="flex-1 h-2 bg-primary rounded-full"></div>
+<div class="flex-1 h-2 bg-primary rounded-full"></div>
+<div class="flex-1 h-2 bg-primary rounded-full"></div>
+</div>
+<p class="text-sm text-gray-500">Step 4 of 4</p>
+</div>
+<h2 class="text-2xl font-bold mb-6">Review & Submit</h2>
+<div class="space-y-6">
+<div class="p-5 bg-neutral-light/30 dark:bg-neutral-dark/30 rounded-lg">
+<h3 class="font-bold mb-3 flex items-center justify-between">
+Personal Information
+<a href="apply-step1.html" class="text-sm text-primary hover:underline">Edit</a>
+</h3>
+<div class="space-y-2 text-sm">
+<p><span class="text-gray-500">Name:</span> <span class="font-medium">John Doe</span></p>
+<p><span class="text-gray-500">Email:</span> <span class="font-medium">john@example.com</span></p>
+<p><span class="text-gray-500">Phone:</span> <span class="font-medium">+1 (555) 000-0000</span></p>
+</div>
+</div>
+<div class="p-5 bg-neutral-light/30 dark:bg-neutral-dark/30 rounded-lg">
+<h3 class="font-bold mb-3 flex items-center justify-between">
+Documents
+<a href="apply-step2.html" class="text-sm text-primary hover:underline">Edit</a>
+</h3>
+<div class="space-y-2 text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+<span>Resume.pdf</span>
+</div>
+<p class="text-gray-500">Cover letter provided</p>
+</div>
+</div>
+<div class="p-5 bg-neutral-light/30 dark:bg-neutral-dark/30 rounded-lg">
+<h3 class="font-bold mb-3 flex items-center justify-between">
+Professional Details
+<a href="apply-step3.html" class="text-sm text-primary hover:underline">Edit</a>
+</h3>
+<div class="space-y-2 text-sm">
+<p><span class="text-gray-500">Experience:</span> <span class="font-medium">3-5 years</span></p>
+<p><span class="text-gray-500">Expected Salary:</span> <span class="font-medium">$80,000 USD</span></p>
+<p><span class="text-gray-500">Start Date:</span> <span class="font-medium">Within 2 weeks</span></p>
+<p><span class="text-gray-500">Custom Questions:</span> <span class="font-medium">Answered</span></p>
+</div>
+</div>
+<div class="border border-neutral-light dark:border-neutral-dark rounded-lg p-5">
+<label class="flex items-start gap-3">
+<input type="checkbox" required class="h-5 w-5 mt-0.5 rounded border-gray-300 text-primary focus:ring-primary"/>
+<span class="text-sm">I confirm that all information provided is accurate and I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a>.</span>
+</label>
+</div>
+<div class="flex gap-3 pt-4">
+<a href="apply-step3.html" class="flex-1 h-12 flex items-center justify-center border border-neutral-light dark:border-neutral-dark font-bold rounded-lg hover:bg-neutral-light/50">Back</a>
+<a href="apply-success.html" class="flex-1 h-12 flex items-center justify-center bg-primary text-white font-bold rounded-lg hover:bg-primary/90">Submit Application</a>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

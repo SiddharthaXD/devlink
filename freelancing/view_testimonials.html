@@ -2,68 +2,102 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>View Testimonial</title>
+<title>Testimonial Details</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script id="tailwind-config">
-tailwind.config = {
-    darkMode: "class",
-    theme: {
-        extend: {
-            colors: {
-                "primary": "#ff7a00",
-                "secondary": "#00c4b3",
-                "background-dark": "#1a1a1a",
-                "text-light": "#ffffff",
-                "text-dark": "#b3b3b3",
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF7A00",
+                        "secondary": "#00C4B3",
+                        "background-light": "#f8f7f5", // Fallback, not used in this design
+                        "background-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
             },
-            fontFamily: {
-                "display": ["Space Grotesk", "sans-serif"],
-                "body": ["Inter", "sans-serif"]
-            },
-        },
-    },
-}
-</script>
-</head>
-<body class="bg-background-dark font-body text-text-dark">
-<div class="relative flex h-auto min-h-screen w-full flex-col">
-<header class="sticky top-0 z-10 flex items-center bg-background-dark/80 p-4 backdrop-blur-sm">
-<button onclick="history.back()" class="text-text-light flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
-<span class="material-symbols-outlined text-2xl">arrow_back</span>
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-body text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-10 flex items-center bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between">
+<button class="flex size-10 items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white text-3xl">chevron_left</span>
 </button>
-<h1 class="text-text-light text-xl font-bold font-display leading-tight flex-1 text-center pr-10">Testimonial</h1>
+<h1 class="text-white text-xl font-bold font-display leading-tight tracking-tight flex-1 text-center">Testimonial Details</h1>
+<div class="size-10 shrink-0"></div> 
 </header>
-<main class="flex flex-col gap-6 p-4">
-<div class="flex flex-col rounded-xl bg-zinc-900/50 p-6 ring-1 ring-white/10">
-<div class="flex items-center gap-3 mb-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlhV5ufLX36fS7QA5k4ELt7a302ynehO1TeW9P703g9RpjsdhUxGVTVv-Cs8TKkPODCmlAHLhjgQXdSIwdaFKOjJ_Wdo4C9z-b2mzZdOyJb7puAbkqtx6kru6mZVZdrq1q_Td6M1OA0U0U29W7vDNg6SyDIHLB9DWA470oK4EbHidZZ24UYqPkudmLUkBdpJQ3QjPKqDw1XUHxFoCZ2eDR9uTnITWsbI5Tb0AUiGDnO38Jh7l5erm9KkO0EI9Uc2OlDXZbtuVfTCnh");'></div>
+<main class="flex-1 px-4 pt-4 pb-8">
+<div class="flex flex-col gap-6 bg-[#252525] p-6 rounded-xl">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Client avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmeSva6wABCHYnwOKLmG9vUOiXbfrTipGptXEGV_5-SGnSbKzrmdAO4oB6cxUQkcdJQjFvpRxfi4mohi9yJD6NQnVeVvM4T3KRu84cz-J5b2geJnQrmDsRFo2EnhT-NV6yJGvTXYdPG_nJ7evCJ598rKoG1DtR_bwapH1jSVz79hjliq8YpHnAqCR0Aq32mqN5ucpinAnahAOSrOfa3FfXmT38-WuqlAN6yrGEaRoSvVw8d9jbQJDi9JUSfqvTskcYnoqFiy130ryv");'></div>
+<div class="flex flex-col">
+<p class="text-white text-lg font-bold font-display leading-tight flex-1 truncate">Jane Doe</p>
+<div class="flex items-center text-primary text-xl">
+<span class="material-symbols-outlined !text-lg">star</span>
+<span class="material-symbols-outlined !text-lg">star</span>
+<span class="material-symbols-outlined !text-lg">star</span>
+<span class="material-symbols-outlined !text-lg">star</span>
+<span class="material-symbols-outlined !text-lg text-[#555]">star_half</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-[#B3B3B3] text-base font-normal leading-relaxed">
+                    Working with this freelancer was an exceptional experience. Their professionalism, attention to detail, and commitment to delivering high-quality work on schedule were outstanding. Communication was clear and consistent throughout the project. I highly recommend them and look forward to collaborating again in the future.
+                </p>
+<hr class="border-t border-[#3A3A3A]"/>
 <div>
-<h2 class="font-display text-2xl font-bold leading-tight tracking-tight text-text-light">AI Chatbot Integration</h2>
-<p class="text-sm font-normal">Client: QuantumLeap AI | Completed: Aug 2023</p>
+<p class="text-sm font-medium text-white/60 mb-3 font-display">About the Project</p>
+<a class="flex items-center gap-4 min-h-14 justify-between transition-opacity hover:opacity-80" href="#">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-secondary/20 shrink-0 size-10">
+<span class="material-symbols-outlined text-secondary">devices</span>
+</div>
+<p class="text-white text-base font-medium leading-normal flex-1 truncate">Redesign of E-commerce Mobile App</p>
+</div>
+<div class="shrink-0">
+<div class="text-white flex size-7 items-center justify-center">
+<span class="material-symbols-outlined text-white/70">chevron_right</span>
 </div>
 </div>
-<div class="flex items-center gap-1 mb-4">
-<span class="material-symbols-outlined text-primary text-xl">star</span>
-<span class="material-symbols-outlined text-primary text-xl">star</span>
-<span class="material-symbols-outlined text-primary text-xl">star</span>
-<span class="material-symbols-outlined text-primary text-xl">star</span>
-<span class="material-symbols-outlined text-primary text-xl">star</span>
-<span class="ml-2 text-base">5 / 5 Stars</span>
-</div>
-<div class="bg-secondary/10 rounded-lg p-4 border border-secondary/30">
-<p class="text-base font-normal leading-relaxed text-text-light">
-"Working with this freelancer was an absolute pleasure. They delivered exceptional work on our AI chatbot integration project, exceeding all expectations. Their technical expertise, attention to detail, and professional communication made the entire process smooth and efficient. The chatbot has significantly improved our customer support response times and overall satisfaction. I highly recommend their services and look forward to working together again on future projects."
-</p>
-<div class="mt-4 pt-4 border-t border-secondary/30">
-<p class="font-bold text-text-light">- QuantumLeap AI Team</p>
-<p class="text-sm text-text-dark">August 2023</p>
+</a>
 </div>
 </div>
-<button onclick="navigator.share ? navigator.share({title: 'Testimonial', text: 'Check out this testimonial!', url: window.location.href}) : alert('Share this testimonial: ' + window.location.href)" class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-primary py-3 px-4 text-center font-display font-bold text-background-dark transition-opacity hover:opacity-90">
-<span class="material-symbols-outlined">share</span>
-Share Testimonial
+<div class="mt-8">
+<button class="w-full flex items-center justify-center gap-2.5 rounded-lg bg-primary py-3.5 px-6 text-center font-body text-base font-bold text-black shadow-sm transition-all hover:opacity-90">
+<span class="material-symbols-outlined !text-2xl">share</span>
+<span>Share Testimonial</span>
 </button>
 </div>
 </main>

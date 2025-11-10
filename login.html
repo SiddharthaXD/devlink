@@ -9,7 +9,25 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="assets/js/tailwind-config.js"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FF7A00',
+        secondary: '#00C4B3',
+        'background-dark': '#1A1A1A',
+        'surface-dark': '#2C2C2C'
+      },
+      fontFamily: {
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Inter', 'sans-serif']
+      }
+    }
+  }
+};
+</script>
 <style>
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -103,7 +121,18 @@ Don't have an account?
 </p>
 </div>
 </div>
-<script src="assets/js/auth.js"></script>
+<script>
+const Auth = {
+  login: (userType) => {
+    sessionStorage.setItem('userType', userType);
+    sessionStorage.setItem('isLoggedIn', 'true');
+  },
+  redirectToDashboard: () => {
+    const userType = sessionStorage.getItem('userType');
+    window.location.href = userType === 'client' ? 'client-dashboard.html' : 'freelancer-dashboard.html';
+  }
+};
+</script>
 <script>
 const freelancerBtn = document.getElementById('freelancerBtn');
 const clientBtn = document.getElementById('clientBtn');
